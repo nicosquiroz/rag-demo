@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
+    "@types/react-monaco-editor": "^0.16.0",
+    "cors": "^2.8.5",
+    "gh-pages": "^6.1.1",
+    "gsap": "^3.12.5",
+    "joi": "^17.6.3",
+    "react-monaco-editor": "^0.58.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "typescript": "^5.6.3"
+  }
+}
