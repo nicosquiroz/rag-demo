@@ -2,11 +2,13 @@
 
 import React, { useRef, useState } from 'react';
 import MonacoEditor from '@monaco-editor/react';
+import IndexList from './components/indexlist';
 
 export default function HomePage() {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [pythonCode, setPythonCode] = useState<string>('# Python formulas will appear here\n');
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [selectedIndexId, setSelectedIndexId] = useState<string | null>(null);
 
   const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -36,10 +38,27 @@ export default function HomePage() {
   };
 
   return (
-    <main style={{ height: '100vh', width: '100vw', background: '#fff', color: '#181818', fontFamily: 'monospace' }}>
-      <div style={{ display: 'flex', height: '100%', width: '100%' }}>
-        {/* Left side: Upload UI */}
+    <main className="flex h-screen bg-gray-50 text-black font-sans">
+      {/* Sidebar */}
+      <aside className="w-72 min-w-[220px] h-full bg-gray-50 border-r border-gray-200 flex flex-col py-6 px-4">
+        <div className="flex items-center gap-2 mb-8">
+          {/* Replace with your logo if needed */}
+          {/* <span className="w-7 h-7 bg-black rounded-full flex items-center justify-center text-white font-bold">A</span> */}
+          <span className="ml-5 font-bold text-lg tracking-tight text-gray-900">Rulebook</span>
+        </div>
+        <br></br>
+        <h2 className="text-lg font-bold text-gray-800 mb-4">Índices</h2>
+        <IndexList
+          selectedId={selectedIndexId}
+          onSelect={setSelectedIndexId}
+        />
+      </aside>
+      {/* Main Content */}
+      <section style={{ flex: 1, display: 'flex', height: '100%' }}>
+        
+        {/* Upload and Editor */}
         <div style={{ flex: 1, padding: 32, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', background: '#fff' }}>
+        <div className='bg-black text-white ml-10'> hi</div>
           <h1 style={{ color: '#181818' }}>Upload PDF and Extract Formulas</h1>
           <input
             type="file"
@@ -61,13 +80,15 @@ export default function HomePage() {
                 readOnly: false,
                 minimap: { enabled: false },
                 fontSize: 16,
-                theme: 'vs-light', // white background
+                theme: 'vs-light',
               }}
               onChange={(value) => setPythonCode(value || '')}
             />
           </div>
         </div>
-      </div>
+      </section>
+        {/* Right panel placeholder for future use */}
+        {/* <aside className="w-56 min-w-[160px] border-l pl-4 bg-white/90 shadow-md rounded-l-3xl flex flex-col items-start py-8 px-6"></aside> */}
     </main>
   );
 }
