@@ -41,12 +41,15 @@ export default function HomePage() {
     <main className="flex h-screen bg-gray-50 text-black font-sans">
       {/* Sidebar */}
       <aside className="w-72 min-w-[220px] h-full bg-gray-50 border-r border-gray-200 flex flex-col py-6 px-4">
-        <div className="flex items-center gap-2 mb-8">
-          {/* Replace with your logo if needed */}
-          {/* <span className="w-7 h-7 bg-black rounded-full flex items-center justify-center text-white font-bold">A</span> */}
-          <span className="ml-5 font-bold text-lg tracking-tight text-gray-900">Rulebook</span>
+        {/* Header */}
+        <div className="flex items-center gap-3 mb-8">
+          {/* Logo or icon */}
+          {/* <span className="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white font-bold text-lg">A</span> */}
+          {/* App name */}
+          <span className="font text-lg tracking-tight text-gray-800"> Manager</span>
+        
         </div>
-        <br></br>
+        {/* ...rest of your sidebar... */}
         <h2 className="text-lg font-bold text-gray-800 mb-4">Índices</h2>
         <IndexList
           selectedId={selectedIndexId}

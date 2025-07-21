@@ -23,14 +23,14 @@ export default function IndexList({
           <button
             onClick={() => onSelect(index.id)}
             className={
-              "w-full text-left rounded-xl px-6 py-4 min-h-[56px] transition border break-words text-sm flex items-center " +
+              "w-full text-left rounded-lg px-6 py-4 min-h-[56px] transition border break-words text-sm flex items-center " +
               (selectedId === index.id
                 ? "bg-white border-gray-200 font-semibold text-gray-900 shadow"
                 : "bg-transparent border-transparent text-gray-400 hover:bg-gray-100")
             }
             style={{ minWidth: "180px", maxWidth: "100%", width: "100%" }} // optional: control width
           >
-            <div className={selectedId === index.id ? "" : "font-semibold"}>
+            <div className={selectedId === index.id ? "" : "font-semibold text-gray-700"}>
               {index.name}
             </div>
           </button>
