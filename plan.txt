@@ -1,0 +1,2 @@
+-> can be a hub for index like flyway. managing version control with gen ai. keep track of python, indexes, excels, etc.
+accelerate the index creation process
